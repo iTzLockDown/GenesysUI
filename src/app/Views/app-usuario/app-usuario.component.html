@@ -12,24 +12,25 @@
       <tr>
         <th>N°</th>
         <th>Usuario</th>
-        <th>Fecha Registro</th>
+        <th>Documento</th>
         <th>Rol</th>
         <th>Estado</th>
         <th></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let usuario of usuarios">
+      <tr *ngFor="let usuario of user">
         <td>*</td>
-        <td>{{ usuario.cApePatern+' '+ usuario.cApeMatern +', '+ usuario.cPriNomUsu+' '+usuario.cSegNomUsu  }} </td>
-        <td>{{usuario.dFecRegist}}</td>
+        <td>{{ usuario.informacion }} </td>
+        <td>{{usuario.documento}}</td>
         <td>Member</td>
         <td>
-          <div *ngIf="usuario.lEstadoUsu==true as value; else elseBlock">
-            <span class="badge badge-success">Activo</span></div>
-          <ng-template #elseBlock>
-            <span class="badge badge-danger">Baneado</span>
-          </ng-template>
+<!--          <div *ngIf="usuario.lEstadoUsu==true as value; else elseBlock">-->
+            <span class="badge badge-success">Activo</span>
+<!--  </div>-->
+<!--          <ng-template #elseBlock>-->
+<!--            <span class="badge badge-danger">Baneado</span>-->
+<!--          </ng-template>-->
         </td>
         <td>
           <button class="btn btn-sm btn-dark" type="button"><i class="fa fa-edit" title="Editar" [routerLink]="'create'"></i></button> |

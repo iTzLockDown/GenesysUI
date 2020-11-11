@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import {Usuario} from '../../Models/usuario';
 import {UsuarioService} from '../../Services/usuario.service';
 import {Router} from '@angular/router';
+import {User} from '../../Models/user';
 @Component({
   selector: 'app-usuario',
   templateUrl: './app-usuario.component.html'
 })
 export class AppUsuarioComponent implements OnInit{
   usuarios: Usuario[];
+  user: User[];
 
   constructor(private router: Router, private usuarioService: UsuarioService) { }
 
@@ -16,7 +18,7 @@ export class AppUsuarioComponent implements OnInit{
   }
   ngOnInit() {
      this.usuarioService.getUsuarios()
-                        .subscribe(usuarios => this.usuarios = usuarios);
+                        .subscribe(user => this.user = user);
   }
   //delete(usuario: Usuario): void {
     // Swal.fire({
