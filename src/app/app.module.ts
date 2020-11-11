@@ -13,6 +13,7 @@ import {RouterModule} from '@angular/router';
 import {routes} from './app.routing';
 import {UsuarioService} from './Services/usuario.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [
 

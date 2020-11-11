@@ -5,19 +5,20 @@ import {Router} from '@angular/router';
 import {Observable, throwError } from 'rxjs';
 import {catchError, map} from 'rxjs/operators';
 import {User} from '../Models/user';
+import {Asesor} from '../Models/asesor';
 
 @Injectable()
 export class UsuarioService {
-  private urlEndPoint: string = "http://localhost:8500/api/listausuarios";
+  private urlEndPoint: string = "http://200.60.61.250:8007//api/asesor/listarcolaunica";
   private httpHeaders = new HttpHeaders({'Content-type': 'application/json'});
 
   constructor(private http: HttpClient,
               private router: Router) {
   }
 
-  getUsuarios(): Observable<User[]> {
+  getUsuarios(): Observable<Asesor[]> {
     return this.http.get(this.urlEndPoint).pipe(
-      map(response => response as User[])
+      map(response => response as Asesor[])
     );
   }
 
